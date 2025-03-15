@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ScrollTrigger.create({
       trigger: $(this),
-      start: "top 92%",
+      start: "top 96%",
       end: "top 72%",
       onEnter: () => {
         tc.play();
