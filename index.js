@@ -114,8 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tc.pause();
       },
     });
-
-  })
+  });
 
    // Animation for Dividers
   $("[divider-animation]").each(function () {
@@ -151,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
     
-  })
+  });
 
 
   //Reloading Page on Window Resize with Timer
