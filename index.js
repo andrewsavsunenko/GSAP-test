@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
       $(this),
       {
         width: "0%",
-        duration: 0.68,
+        duration: 0.8,
         ease: "power3.out",
         //stagger: { /*amount: 0.64*/ each: 0.16 },
       }
