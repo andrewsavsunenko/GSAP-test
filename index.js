@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         width: "0%",
         duration: 1.6,
-        ease: "power2.in",
+        ease: "power1.inOut",
       }
     );
 
