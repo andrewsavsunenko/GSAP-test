@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tc.fromTo(
       $(this),
       {
-        yPercent: 80,
+        yPercent: 60,
       },
       {
         yPercent: 0,
