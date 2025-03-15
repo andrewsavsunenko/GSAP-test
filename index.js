@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       //toggleActions: "play none none reverse",
       start: "top 84%",
       end: "top 32%",
-      scrub: true,
+      //scrub: true,
       onEnter: () => {
         tm.play();
       },
