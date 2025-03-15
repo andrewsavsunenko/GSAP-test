@@ -107,5 +107,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 console.log("gsap works");
-console.log("GitHub Dev + Pages / finnaly worked");
-console.log("test2");
+console.log("GitHub Dev + Pages");
