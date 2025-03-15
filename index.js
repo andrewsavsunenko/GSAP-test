@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
       markers: true,
       //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
       //toggleActions: "play none none reverse",
-      start: "top 90%",
+      start: "top 98%",
       end: "top 50%",
       onEnter: () => {
         tc.play();
