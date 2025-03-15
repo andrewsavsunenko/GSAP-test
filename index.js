@@ -96,14 +96,14 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         yPercent: 0,
         duration: 0.68,
-        ease: "power3.out",
+        ease: "power2.out",
       }
     );
 
     ScrollTrigger.create({
       trigger: $(this),
-      start: "top 92%",
-      end: "top 72%",
+      start: "top 96%",
+      end: "top 76%",
       onEnter: () => {
         tc.play();
       },
