@@ -104,19 +104,25 @@ document.addEventListener("DOMContentLoaded", () => {
       onEnter: () => {
         tc.play();
       },
+    })
+
+    ScrollTrigger.create({
+      trigger: $(this),
+      start: "top 101%",
       onLeaveBack: () => {
         tc.progress(0);
         tc.pause();
+      },
     });
-    
+
   })
 
    // Animation for Dividers
-   $("[divider-animation]").each(function () {
+  $("[divider-animation]").each(function () {
     
-    let tc= gsap.timeline({paused:true});
+    let td= gsap.timeline({paused:true});
     
-    tc.from(
+    td.from(
       $(this),
       {
         width: "25%",
@@ -133,11 +139,15 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 88%",
       end: "top 22%",
       onEnter: () => {
-        tc.play();
+        td.play();
       },
+    });
+    ScrollTrigger.create({
+      trigger: $(this),
+      start: "top 101%",
       onLeaveBack: () => {
-        tc.progress(0);
-        tc.pause();
+        td.progress(0);
+        td.pause();
       },
     });
     
