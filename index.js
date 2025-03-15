@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ScrollTrigger.create({
       trigger: $(this),
-      start: "top 101%",
+      start: "top 120%",
       onLeaveBack: () => {
         tc.progress(0);
         tc.pause();
