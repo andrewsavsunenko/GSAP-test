@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //   if ((sessionStorage.length = 0)) {
   //     loaderWrapper.style.display = "block";
   //     loaderTrigger.click();
-  //     loaderTrigger.click();
   //     sessionStorage.setItem("Loaded", "true");
   //   } else {
   //   }
@@ -54,15 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-    // tm.from(
-    //   $("[title-description]"),
-    //   {
-    //     opacity:0,
-    //     duration: 0.68,
-    //     ease: "power3.out",
-    //   }
-    // )
-
     //Scroll Trigger for In
     ScrollTrigger.create({
       trigger: $(this),
@@ -86,6 +76,48 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   });
+
+  // Animation for Content
+  $("[content-animation]").each(function () {
+    
+    let tc= gsap.timeline({paused:true});
+    
+    tc.fromTo(
+      $(this),
+      {
+        yPercent: 15,
+      },
+      {
+        yPercent: 0,
+        duration: 0.68,
+        ease: "power3.out",
+        //stagger: { /*amount: 0.64*/ each: 0.16 },
+      }
+    );
+
+    ScrollTrigger.create({
+      trigger: $(this),
+      //markers: true,
+      //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
+      //toggleActions: "play none none reverse",
+      start: "top 84%",
+      end: "top 32%",
+      onEnter: () => {
+        tm.play();
+      },
+    });
+
+    //Scroll Trigger for Out
+    ScrollTrigger.create({
+      trigger: $(this),
+      start: "top 101%",
+      onLeaveBack: () => {
+        tm.progress(0);
+        tm.pause();
+      },
+    });
+    
+  })
 
 
   //Reloading Page on Window Resize with Timer
