@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tc.fromTo(
       $(this),
       {
-        yPercent: 40,
+        yPercent: 60,
       },
       {
         yPercent: 0,
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.create({
       trigger: $(this),
       start: "top 98%",
-      end: "top 72%",
+      end: "top 68%",
       markers:true,
       onEnter: () => {
         tc.play();
@@ -123,8 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
       $(this),
       {
         width: "0%",
-        duration: 0.8,
-        ease: "power1.inOut",
+        duration: 0.1,
+        ease: "power3.out",
       }
     );
 
