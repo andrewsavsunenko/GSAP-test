@@ -124,9 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
     td.from(
       $(this),
       {
-        width: "25%",
+        width: "0%",
         duration: 0.68,
-        ease: "power3.out",
+        ease: "power3.in",
+        scrub: true,
         //stagger: { /*amount: 0.64*/ each: 0.16 },
       }
     );
