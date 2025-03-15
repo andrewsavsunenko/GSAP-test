@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Animation for H2 Titles
   $("[text-animate] span.word span").each(function () {
-    //timeline setup
+    //timeline for H2
     let tm = gsap.timeline({ paused: true });
-
+    
     tm.fromTo(
       $(this),
       {
@@ -54,6 +54,21 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
+    // Animation for H2 Dexcriptions
+    $("[title-description]").each(function () {
+      let td = gsap.timeline({paused:true});
+  
+      td.from(
+        $(this),
+        {
+          delay: 0.5,
+          opacity:0,
+          duration: 0.68,
+          ease: "power3.out",
+        }
+      )
+    });
+
     //Scroll Trigger for In
     ScrollTrigger.create({
       trigger: $(this),
@@ -63,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 84%",
       end: "top 32%",
       onEnter: () => tm.play(),
+      onStart:()=> td.play(),
     });
 
     //Scroll Trigger for Out
@@ -72,9 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
       onLeaveBack: () => {
         tm.progress(0);
         tm.pause();
+        td
       },
     });
   });
+
 
   //Reloading Page on Window Resize with Timer
   let w = window.innerWidth;
