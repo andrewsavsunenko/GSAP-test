@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         yPercent: 0,
         duration: 0.68,
-        ease: "power2.out",
+        ease: "power3.out",
         //stagger: { /*amount: 0.64*/ each: 0.16 },
       }
     );
