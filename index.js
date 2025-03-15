@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tc.fromTo(
       $(this),
       {
-        y: 128,
+        y: 80,
         opacity: 0,
       },
       {
@@ -102,8 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
       markers: true,
       //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
       //toggleActions: "play none none reverse",
-      start: "top 84%",
-      end: "top 32%",
+      start: "top 95%",
+      end: "top 40%",
       onEnter: () => {
         tc.play();
       },
