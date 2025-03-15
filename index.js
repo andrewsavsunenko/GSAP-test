@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "<span style='display:block; margin-right:1px;'>" + c + "</span>";
     });
 
-  // Animation for H2 Titles
+  // Animation for Titles
   $("[text-animate] span.word span").each(function () {
     //timeline for H2
     let tm = gsap.timeline({ paused: true });
@@ -126,8 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         width: "0%",
         duration: 0.68,
-        ease: "power3.in",
-        scrub: true,
+        ease: "power3.out",
         //stagger: { /*amount: 0.64*/ each: 0.16 },
       }
     );
@@ -136,8 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: $(this),
       //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
       //toggleActions: "play none none reverse",
-      start: "top 84%",
+      start: "top 64%",
       end: "top 32%",
+      scrub: true,
       onEnter: () => {
         td.play();
       },
