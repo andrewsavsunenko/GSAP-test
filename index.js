@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   runSplit();
 
+
+
   //adding a <span> element to create a mask
   document
     .querySelectorAll("[text-animate] span.word")
@@ -34,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
       item.innerHTML =
         "<span style='display:block; margin-right:1px;'>" + c + "</span>";
     });
+
+
 
   // Animation for Titles
   $("[text-animate] span.word span").each(function () {
@@ -77,6 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+
+
   // Animation for projectsList
   $("[projectsList-animation]").each(function () {
     
@@ -97,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.create({
       trigger: $(this),
       start: "top 98%",
-      end: "top 68%",
+      end: "top 72%",
       markers:true,
       onEnter: () => {
         tc.play();
@@ -113,6 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   });
+
+
 
    // Animation for Dividers
   $("[divider-animation]").each(function () {
