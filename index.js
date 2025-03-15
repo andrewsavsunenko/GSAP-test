@@ -91,14 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
         yPercent: 0,
         duration: 0.68,
         ease: "power2.out",
-        //stagger: { /*amount: 0.64*/ each: 0.16 },
       }
     );
 
     ScrollTrigger.create({
       trigger: $(this),
-      //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
-      //toggleActions: "play none none reverse",
       start: "top 98%",
       end: "top 72%",
       onEnter: () => {
@@ -127,16 +124,14 @@ document.addEventListener("DOMContentLoaded", () => {
         width: "0%",
         duration: 0.8,
         ease: "power3.in",
-        //stagger: { /*amount: 0.64*/ each: 0.16 },
       }
     );
 
     ScrollTrigger.create({
       trigger: $(this),
-      //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
-      //toggleActions: "play none none reverse",
       start: "top 84%",
       end: "top 34%",
+      scrub: 0.5,
       onEnter: () => {
         td.play();
       },
