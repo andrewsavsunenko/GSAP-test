@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tc.fromTo(
       $(this),
       {
-        yPercent: 60,
+        yPercent: 40,
       },
       {
         yPercent: 0,
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
       $(this),
       {
         width: "0%",
-        duration: 0.8,
+        duration: 1.6,
         ease: "power2.in",
       }
     );
