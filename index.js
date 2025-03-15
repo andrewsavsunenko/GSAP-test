@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
       $(this),
       {
         width: "0%",
-        duration: 0.1,
+        duration: 0.86,
         ease: "power3.out",
       }
     );
