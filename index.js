@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         yPercent: 0,
         opacity: 1,
-        duration: 0.8,
+        duration: 0.68,
         ease: "power3.out",
         //stagger: { /*amount: 0.64*/ each: 0.16 },
       }
@@ -102,8 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
       markers: true,
       //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
       //toggleActions: "play none none reverse",
-      start: "top 95%",
-      end: "top 40%",
+      start: "top 90%",
+      end: "top 50%",
       onEnter: () => {
         tc.play();
       },
