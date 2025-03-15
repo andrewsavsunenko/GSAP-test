@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         yPercent: 0,
         duration: 0.68,
+        delay: 0.5,
         ease: "power2.out",
       }
     );
