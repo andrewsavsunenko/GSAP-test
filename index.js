@@ -85,13 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
     tc.fromTo(
       $(this),
       {
-        y: 200,
+        y: 128,
         opacity: 0,
       },
       {
         y: 0,
-        opacity:1,
-        duration: 0.68,
+        opacity: 1,
+        duration: 0.8,
         ease: "power3.out",
         //stagger: { /*amount: 0.64*/ each: 0.16 },
       }
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ScrollTrigger.create({
       trigger: $(this),
-      //markers: true,
+      markers: true,
       //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
       //toggleActions: "play none none reverse",
       start: "top 84%",
