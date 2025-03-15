@@ -96,14 +96,14 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         yPercent: 0,
         duration: 0.68,
-        ease: "power2.out",
+        ease: "power3.out",
       }
     );
 
     ScrollTrigger.create({
       trigger: $(this),
-      start: "top 92%",
-      end: "top 72%",
+      start: "top 96%",
+      end: "top 76%",
       onEnter: () => {
         tc.play();
       },
@@ -130,8 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
       $(this),
       {
         width: "0%",
-        duration: 0.86,
-        ease: "power2.out",
+        duration: 1.2,
+        ease: "power1.out",
       }
     );
 
@@ -139,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: $(this),
       start: "top 84%",
       end: "top 32%",
-      scrub: 0.5,
       onEnter: () => {
         td.play();
       },
