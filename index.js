@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
       $(this),
       {
         width: "0%",
-        duration: 1.6,
+        duration: 0.8,
         ease: "power1.inOut",
       }
     );
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.create({
       trigger: $(this),
       start: "top 84%",
-      end: "top 34%",
+      end: "top 32%",
       scrub: 0.5,
       onEnter: () => {
         td.play();
