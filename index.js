@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top 84%",
       end: "top 32%",
       onEnter: () => {
-        tm.play();
+        tc.play();
       },
     });
 
@@ -112,8 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: $(this),
       start: "top 101%",
       onLeaveBack: () => {
-        tm.progress(0);
-        tm.pause();
+        tc.progress(0);
+        tc.pause();
       },
     });
     
