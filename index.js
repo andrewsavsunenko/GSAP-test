@@ -85,11 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
     tc.fromTo(
       $(this),
       {
-        y: 80,
-        opacity: 0,
+        yPercent: 100,
+        opacity: 0.5,
       },
       {
-        y: 0,
+        yPercent: 0,
         opacity: 1,
         duration: 0.8,
         ease: "power3.out",
