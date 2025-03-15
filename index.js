@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tc.fromTo(
       $(this),
       {
-        yPercent: 124,
+        yPercent: 80,
       },
       {
         yPercent: 0,
@@ -100,8 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
       markers: true,
       //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
       //toggleActions: "play none none reverse",
-      start: "top 96%",
-      end: "top 56%",
+      start: "top 98%",
+      end: "top 72%",
       onEnter: () => {
         tc.play();
       },
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
   })
 
-   // Animation for projectsList
+   // Animation for Dividers
    $("[divider-animation]").each(function () {
     
     let tc= gsap.timeline({paused:true});
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tc.from(
       $(this),
       {
-        width: "75%",
+        width: "25%",
         duration: 0.68,
         ease: "power3.out",
         //stagger: { /*amount: 0.64*/ each: 0.16 },
@@ -139,8 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
       markers: true,
       //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
       //toggleActions: "play none none reverse",
-      start: "top 96%",
-      end: "top 56%",
+      start: "top 99%",
+      end: "top 32%",
       onEnter: () => {
         tc.play();
       },
