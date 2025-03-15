@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         width: "0%",
         duration: 0.8,
-        ease: "power3.out",
+        ease: "power3.in",
         //stagger: { /*amount: 0.64*/ each: 0.16 },
       }
     );
@@ -135,9 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: $(this),
       //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
       //toggleActions: "play none none reverse",
-      start: "top 64%",
-      end: "top 32%",
-      scrub: true,
+      start: "top 84%",
+      end: "top 34%",
       onEnter: () => {
         td.play();
       },
