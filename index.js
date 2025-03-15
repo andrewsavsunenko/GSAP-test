@@ -104,16 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
       onEnter: () => {
         tc.play();
       },
-    });
-
-    //Scroll Trigger for Out
-    ScrollTrigger.create({
-      trigger: $(this),
-      start: "top 101%",
       onLeaveBack: () => {
         tc.progress(0);
         tc.pause();
-      },
     });
     
   })
@@ -137,17 +130,11 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: $(this),
       //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
       //toggleActions: "play none none reverse",
-      start: "top 99%",
-      end: "top 32%",
+      start: "top 88%",
+      end: "top 22%",
       onEnter: () => {
         tc.play();
       },
-    });
-
-    //Scroll Trigger for Out
-    ScrollTrigger.create({
-      trigger: $(this),
-      start: "top 101%",
       onLeaveBack: () => {
         tc.progress(0);
         tc.pause();
