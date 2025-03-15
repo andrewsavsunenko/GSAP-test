@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         yPercent: 0,
         duration: 0.68,
-        ease: "power3.out",
+        ease: "power2.out",
         //stagger: { /*amount: 0.64*/ each: 0.16 },
       }
     );
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tc.fromTo(
       $(this),
       {
-        yPercent: 40,
+        yPercent: 48,
       },
       {
         yPercent: 0,
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         width: "0%",
         duration: 0.86,
-        ease: "power3.out",
+        ease: "power2.out",
       }
     );
 
