@@ -104,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: $(this),
       start: "top 92%",
       end: "top 72%",
-      markers:true,
       onEnter: () => {
         tc.play();
       },
