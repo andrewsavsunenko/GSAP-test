@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ScrollTrigger.create({
       trigger: $(this),
-      start: "top 96%",
+      start: "top 92%",
       end: "top 72%",
       markers:true,
       onEnter: () => {
