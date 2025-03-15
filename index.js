@@ -77,15 +77,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Animation for Content
-  $("[content-animation]").each(function () {
+  // Animation for projectsList
+  $("[projectsList-animation]").each(function () {
     
     let tc= gsap.timeline({paused:true});
     
     tc.fromTo(
       $(this),
       {
-        yPercent: 100,
+        yPercent: 124,
       },
       {
         yPercent: 0,
@@ -100,7 +100,46 @@ document.addEventListener("DOMContentLoaded", () => {
       markers: true,
       //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
       //toggleActions: "play none none reverse",
-      start: "top 99%",
+      start: "top 96%",
+      end: "top 56%",
+      onEnter: () => {
+        tc.play();
+      },
+    });
+
+    //Scroll Trigger for Out
+    ScrollTrigger.create({
+      trigger: $(this),
+      start: "top 101%",
+      onLeaveBack: () => {
+        tc.progress(0);
+        tc.pause();
+      },
+    });
+    
+  })
+
+   // Animation for projectsList
+   $("[divider-animation]").each(function () {
+    
+    let tc= gsap.timeline({paused:true});
+    
+    tc.from(
+      $(this),
+      {
+        width: "75%",
+        duration: 0.68,
+        ease: "power3.out",
+        //stagger: { /*amount: 0.64*/ each: 0.16 },
+      }
+    );
+
+    ScrollTrigger.create({
+      trigger: $(this),
+      markers: true,
+      //toggleActions — onEnter, onLeave, onEnterBack, and onLeaveBack
+      //toggleActions: "play none none reverse",
+      start: "top 96%",
       end: "top 56%",
       onEnter: () => {
         tc.play();
