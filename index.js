@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       )
     })
   });
-  });
+  
 
 
   // Animation for H2 Titles
