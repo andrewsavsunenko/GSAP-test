@@ -11,11 +11,6 @@ function runSplit() {
 //we run the code when content is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   
-  // //Preloader H1 Title Animation
-  // window.addEventListener("load", () => {
-  //   gsap
-  // });
-
   runSplit();
 
   //adding a <span> element to create a mask
@@ -28,8 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-
-  // Animation for Titles
+  // Animation for H2 Titles
   $("[text-animate] span.word span").each(function () {
     
     let tm = gsap.timeline({ paused: true });
