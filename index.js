@@ -26,8 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   runSplit();
 
-
-
   //adding a <span> element to create a mask
   document
     .querySelectorAll("[text-animate] span.word")
@@ -41,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Animation for Titles
   $("[text-animate] span.word span").each(function () {
-    //timeline for H2
+    
     let tm = gsap.timeline({ paused: true });
     
     tm.fromTo(
@@ -57,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-    //Scroll Trigger for In
+    //Scroll Trigger / In-View
     ScrollTrigger.create({
       trigger: $(this),
       //markers: true,
@@ -71,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    //Scroll Trigger for Out
+    //Scroll Trigger / Out-of-View
     // ScrollTrigger.create({
     //   trigger: $(this),
     //   start: "top 101%",
@@ -92,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tc.fromTo(
       $(this),
       {
-        yPercent: 48,
+        yPercent: 52,
       },
       {
         yPercent: 0,
