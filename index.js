@@ -22,26 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "<span style='display:block; margin-right:1px;'>" + c + "</span>";
     });
 
-
-  // //Preloader H1 Title Animation
-  // window.addEventListener("load", () => {
-  //   document.querySelector("[hero-title-animate] span.word span")
-  //   .forEach(function (){
-  //     gsap.fromTo(
-  //       $(this),{
-  //         yPercent: 95,
-  //       },{
-  //         yPercent: 0,
-  //         duration: 0.68,
-  //         delay: 4,
-  //         ease: "power3.out",
-  //       }
-  //     )
-  //   })
-  // });
-  
-
-
   // Animation for H2 Titles
   $("[text-animate] span.word span").each(function () {
     
@@ -226,6 +206,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener("resize", debounce(reloadSplit, 300));
+});
+
+//Preloader H1 Title Animation
+window.addEventListener("load", () => {
+  document.querySelector("[hero-title-animate] span.word span")
+  .forEach(function (){
+    gsap.fromTo(
+      $(this),{
+        yPercent: 95,
+      },{
+        yPercent: 0,
+        duration: 0.68,
+        delay: 4,
+        ease: "power3.out",
+      }
+    )
+  })
 });
 
 console.log("gsap works");
