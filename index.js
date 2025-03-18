@@ -155,6 +155,45 @@ document.addEventListener("DOMContentLoaded", () => {
     
   });
 
+  //Partners Logos Animation
+  $("[.logo__img__b").each(function () {
+    
+    let tc= gsap.timeline({paused:true});
+    
+    tc.fromTo(
+      $(this),
+      {
+        yPercent: 48,
+      },
+      {
+        yPercent: 0,
+        duration: 0.68,
+        ease: "power2.out",
+        stagger:{
+          each: 0.08,
+        }
+      }
+    );
+
+    ScrollTrigger.create({
+      trigger: $(this),
+      start: "top 96%",
+      end: "top 72%",
+      onEnter: () => {
+        tc.play();
+      },
+    })
+
+    // ScrollTrigger.create({
+    //   trigger: $(this),
+    //   start: "top 120%",
+    //   onLeaveBack: () => {
+    //     tc.progress(0);
+    //     tc.pause();
+    //   },
+    // });
+  });
+
 
   //Reloading Page on Window Resize with Timer
   let w = window.innerWidth;
