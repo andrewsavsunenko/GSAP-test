@@ -218,9 +218,11 @@ window.addEventListener("load", () => {
       },{
         yPercent: 0,
         duration: 0.68,
-        delay: 2.8,
+        delay: 2.6,
         ease: "power2.out",
         stagger: {
+          from:start,
+          axis: "y",
           amount: 0.68,
         },
       }
