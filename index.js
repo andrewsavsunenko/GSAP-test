@@ -222,8 +222,6 @@ window.addEventListener("load", () => {
         ease: "power2.out", 
         stagger: {
           amount: 0.24,
-          axis: "y",
-          from: start,
         },
       }
     )
