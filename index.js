@@ -69,9 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
       onEnter: () => {
         tm.play();
       },
-      onEnterBack:()=>{
-        tm.progress(100);
-      }
     });
 
     //Scroll Trigger for Out
