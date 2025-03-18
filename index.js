@@ -210,8 +210,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Preloader H1 Title Animation
 window.addEventListener("load", () => {
-  document.querySelector("[hero-title-animate] span.word span")
-  .forEach(function (){
+  $("[hero-title-animate] span.word span")
+  .each(function (){
     gsap.fromTo(
       $(this),{
         yPercent: 95,
