@@ -213,7 +213,7 @@ window.addEventListener("load", () => {
   $(".hero__title--wrapper")
   .each(function (){
     gsap.fromTo(
-      $(this).find("h1[hero-title-animate]"),{
+      $(this).find("h1[hero-title-animate] span.word span"),{
         yPercent: 100,
       },{
         yPercent: 0,
@@ -222,6 +222,8 @@ window.addEventListener("load", () => {
         ease: "power2.out", 
         stagger: {
           amount: 0.24,
+          axis: "y",
+          from: start,
         },
       }
     )
