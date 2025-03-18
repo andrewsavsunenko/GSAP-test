@@ -210,16 +210,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Preloader H1 Title Animation
 window.addEventListener("load", () => {
-  $("[hero-title-animate] span.word span")
+  $("hero_title-wrapper")
   .each(function (){
     gsap.fromTo(
-      $(this),{
+      $(this).find("[hero-title-animate] span.word span"),{
         yPercent: 100,
       },{
         yPercent: 0,
         duration: 0.68,
-        delay: 2.4,
-        ease: "power3.out",
+        delay: 1.6,
+        ease: "power2.out",
+        stagger: {
+          amount: 0.8,
+        },
       }
     )
   })
