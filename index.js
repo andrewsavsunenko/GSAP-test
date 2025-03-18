@@ -213,7 +213,7 @@ window.addEventListener("load", () => {
   $(".hero__title--wrapper")
   .each(function (){
     gsap.fromTo(
-      $(this).find("[hero-title-animate] span.word span"),{
+      $(this).find("h1[hero-title-animate] span.word span"),{
         yPercent: 100,
       },{
         yPercent: 0,
