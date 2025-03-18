@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let tc= gsap.timeline({paused:true});
     
     tc.fromTo(
-      $(this),
+      $(this).find(".logo__img__b"),
       {
         yPercent: 48,
       },
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
         yPercent: 0,
         duration: 0.68,
         ease: "power2.out",
-        stagger: 0.1,
+        stagger:0.1,
       }
     );
 
