@@ -69,15 +69,15 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    //Scroll Trigger / Out-of-View
-    // ScrollTrigger.create({
-    //   trigger: $(this),
-    //   start: "top 101%",
-    //   onLeaveBack: () => {
-    //     tm.progress(0);
-    //     tm.pause();
-    //   },
-    // });
+    Scroll Trigger / Out-of-View
+    ScrollTrigger.create({
+      trigger: $(this),
+      start: "top 101%",
+      onLeaveBack: () => {
+        tm.progress(0);
+        tm.pause();
+      },
+    });
   });
 
 
@@ -108,14 +108,14 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     })
 
-    // ScrollTrigger.create({
-    //   trigger: $(this),
-    //   start: "top 120%",
-    //   onLeaveBack: () => {
-    //     tc.progress(0);
-    //     tc.pause();
-    //   },
-    // });
+    ScrollTrigger.create({
+      trigger: $(this),
+      start: "top 120%",
+      onLeaveBack: () => {
+        tc.progress(0);
+        tc.pause();
+      },
+    });
   });
 
 
@@ -142,14 +142,14 @@ document.addEventListener("DOMContentLoaded", () => {
         td.play();
       },
     });
-    // ScrollTrigger.create({
-    //   trigger: $(this),
-    //   start: "top 101%",
-    //   onLeaveBack: () => {
-    //     td.progress(0);
-    //     td.pause();
-    //   },
-    // });
+    ScrollTrigger.create({
+      trigger: $(this),
+      start: "top 101%",
+      onLeaveBack: () => {
+        td.progress(0);
+        td.pause();
+      },
+    });
     
   });
 
