@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tc.fromTo(
       $(this).find(".logo__img__b"),
       {
-        yPercent: 48,
+        yPercent: 32,
       },
       {
         yPercent: 0,
