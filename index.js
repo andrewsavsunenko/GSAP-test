@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //Partners Logos Animation
-  $(".logo__wrapper__row._1").each(function () {
+  $(".logo__wrapper__row.1").each(function () {
     
     let tc= gsap.timeline({paused:true});
     
