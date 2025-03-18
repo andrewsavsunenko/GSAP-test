@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    Scroll Trigger / Out-of-View
+    //Scroll Trigger / Out-of-View
     ScrollTrigger.create({
       trigger: $(this),
       start: "top 101%",
