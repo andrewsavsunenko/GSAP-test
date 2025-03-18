@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //Partners Logos Animation
-  $("[.logo__img__b").each(function () {
+  $(".logo__img__b").each(function () {
     
     let tc= gsap.timeline({paused:true});
     
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 0.68,
         ease: "power2.out",
         stagger:{
-          each: 0.08,
+          each: 0.1,
         }
       }
     );
@@ -184,14 +184,14 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     })
 
-    // ScrollTrigger.create({
-    //   trigger: $(this),
-    //   start: "top 120%",
-    //   onLeaveBack: () => {
-    //     tc.progress(0);
-    //     tc.pause();
-    //   },
-    // });
+    ScrollTrigger.create({
+      trigger: $(this),
+      start: "top 120%",
+      onLeaveBack: () => {
+        tc.progress(0);
+        tc.pause();
+      },
+    });
   });
 
 
