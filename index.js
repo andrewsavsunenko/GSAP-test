@@ -169,7 +169,10 @@ document.addEventListener("DOMContentLoaded", () => {
         yPercent: 0,
         duration: 0.68,
         ease: "power2.out",
-        stagger: {each: 0.08},
+        stagger: {
+          each: 0.06,
+          axis: "y",
+        },
       }
     );
 
