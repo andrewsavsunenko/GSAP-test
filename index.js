@@ -23,22 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-  //Preloader H1 Title Animation
-  window.addEventListener("load", () => {
-    document.querySelector("[hero-title-animate] span.word span")
-    .forEach(function (){
-      gsap.fromTo(
-        $(this),{
-          yPercent: 95,
-        },{
-          yPercent: 0,
-          duration: 0.68,
-          delay: 4,
-          ease: "power3.out",
-        }
-      )
-    })
-  });
+  // //Preloader H1 Title Animation
+  // window.addEventListener("load", () => {
+  //   document.querySelector("[hero-title-animate] span.word span")
+  //   .forEach(function (){
+  //     gsap.fromTo(
+  //       $(this),{
+  //         yPercent: 95,
+  //       },{
+  //         yPercent: 0,
+  //         duration: 0.68,
+  //         delay: 4,
+  //         ease: "power3.out",
+  //       }
+  //     )
+  //   })
+  // });
   
 
 
