@@ -1,16 +1,16 @@
-// Split Type Parameters
-let splitText;
-function runSplit() {
-  splitText = new SplitType("[text-split]", {
-    types: "words",
-    tagName: "span",
-  });
-  console.log("Text Split Run");
-}
-
 //we run the code when content is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   
+  // Split Type Parameters
+  let splitText;
+  function runSplit() {
+    splitText = new SplitType("[text-split]", {
+      types: "words",
+      tagName: "span",
+    });
+    console.log("Text Split Run");
+  } 
+
   runSplit();
 
   //adding a <span> element to create a mask
