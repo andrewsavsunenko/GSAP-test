@@ -10,18 +10,10 @@ function runSplit() {
 
 //we run the code when content is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-  //
-  //Preloader Animation
-
-  // let loaderTrigger = document.querySelector("preloader_trigger");
-  // let loaderWrapper = document.querySelector("preloader_wrapper");
+  
+  // //Preloader H1 Title Animation
   // window.addEventListener("load", () => {
-  //   if ((sessionStorage.length = 0)) {
-  //     loaderWrapper.style.display = "block";
-  //     loaderTrigger.click();
-  //     sessionStorage.setItem("Loaded", "true");
-  //   } else {
-  //   }
+  //   gsap
   // });
 
   runSplit();
