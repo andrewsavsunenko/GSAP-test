@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //adding a <span> element to create a mask
   document
-    .querySelectorAll("[text-animate] span.word")
+    .querySelectorAll("[text-split] span.word")
     .forEach(function (item) {
       let c = item.getHTML();
       item.innerHTML =
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 0.68,
         ease: "power2.out",
         stagger: {
-          amount: 0.8,
+          amount: 0.68,
         },
       }
     );
@@ -214,7 +214,7 @@ window.addEventListener("load", () => {
   .each(function (){
     gsap.fromTo(
       $(this),{
-        yPercent: 95,
+        yPercent: 100,
       },{
         yPercent: 0,
         duration: 0.68,
