@@ -169,12 +169,12 @@ document.addEventListener("DOMContentLoaded", () => {
         yPercent: 0,
         duration: 0.68,
         ease: "power2.out",
-        stagger: {each: 1},
+        stagger: {each: 0.08},
       }
     );
 
     ScrollTrigger.create({
-      trigger: $(this),
+      trigger: $(this).find(".logo__img__b"),
       start: "top 96%",
       end: "top 72%",
       onEnter: () => {
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     ScrollTrigger.create({
-      trigger: $(this),
+      trigger: $(this).find(".logo__img__b"),
       start: "top 120%",
       onLeaveBack: () => {
         tc.progress(0);
