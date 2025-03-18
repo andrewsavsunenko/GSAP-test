@@ -218,8 +218,8 @@ window.addEventListener("load", () => {
       },{
         yPercent: 0,
         duration: 0.68,
-        delay: 2.56,
-        ease: "power2.out",
+        delay: 2.6,
+        ease: "power2.out", 
         stagger: {
           amount: 0.24,
         },
