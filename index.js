@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let splitText;
   function runSplit() {
     splitText = new SplitType("[text-split]", {
-      types: "words",
+      types: "lines",
       tagName: "span",
     });
     console.log("Text Split Run");
