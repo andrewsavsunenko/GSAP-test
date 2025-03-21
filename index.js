@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let splitText;
   function runSplit() {
     splitText = new SplitType("[text-split]", {
-      types: "lines",
+      types: "words",
       tagName: "span",
     });
     console.log("Text Split Run");
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //adding a <span> element to create a mask
   document
-    .querySelectorAll("[text-split] span.line")
+    .querySelectorAll("[text-split] span.word")
     .forEach(function (item) {
       let c = item.getHTML();
       item.innerHTML =
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   // Animation for H2 Titles
-  $("[text-animate] span.line span").each(function () {
+  $("[text-animate] span.word span").each(function () {
     
     let tm = gsap.timeline({ paused: true });
     
@@ -213,7 +213,7 @@ window.addEventListener("load", () => {
   $(".hero__title--wrapper")
   .each(function (){
     gsap.fromTo(
-      $(this).find("h1[hero-title-animate] span.line span"),{
+      $(this).find("h1[hero-title-animate] span.word span"),{
         yPercent: 100,
       },{
         yPercent: 0,
