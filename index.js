@@ -1,3 +1,5 @@
+
+
 //we run the code when content is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   
@@ -5,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let splitText;
   function runSplit() {
     splitText = new SplitType("[text-split]", {
-      types: "lines,words",
+      types: "words",
       tagName: "span",
     });
     console.log("Text Split Run");
@@ -210,34 +212,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-//Preloader H1 Title Animation
-window.addEventListener("load", () => {
-  document
-    .querySelectorAll("h1[hero-title-animate] span.line")
-    .forEach(function (item) {
-      let c = item.innerHTML;
-      item.innerHTML =
-        "<span style='display:block; margin-right:1px;'>" + c + "</span>";
-    }); 
+// //Preloader H1 Title Animation
+// window.addEventListener("load", () => {
+  
+//   document
+//     .querySelectorAll("h1[hero-title-animate] span.line")
+//     .forEach(function (item) {
+//       let c = item.innerHTML;
+//       item.innerHTML =
+//         "<span style='display:block; margin-right:1px;'>" + c + "</span>";
+//     }); 
 
-  $(".hero__title--wrapper")
-  .each(function (){
-    gsap.fromTo(
-      $(this).find("h1[hero-title-animate] span.line span"),{
-        yPercent: 100,
-      },{
-        yPercent: 0,
-        duration: 0.68,
-        delay: 2.5,
-        axis:"y",
-        ease: "power3.out", 
-        stagger: {
-          amount: 0.32,
-        },
-      }
-    )
-  })
-});
+//   $(".hero__title--wrapper")
+//   .each(function (){
+//     gsap.fromTo(
+//       $(this).find("h1[hero-title-animate] span.line span"),{
+//         yPercent: 100,
+//       },{
+//         yPercent: 0,
+//         duration: 0.68,
+//         delay: 2.5,
+//         axis:"y",
+//         ease: "power3.out", 
+//         stagger: {
+//           amount: 0.32,
+//         },
+//       }
+//     )
+//   })
+// });
 
 console.log("gsap works");
 console.log("GitHub Dev + Pages");
