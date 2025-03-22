@@ -105,7 +105,7 @@ class App {
           }
         )
         .fromTo(
-          this.heroButtonWrapper.querySelector("btn__link.hero"),
+          this.heroButtonWrapper.querySelector("btn__link"),
           {
             opacity: 0,
           },
