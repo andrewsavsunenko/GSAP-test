@@ -90,33 +90,22 @@ class App {
 
   _heroTitleAnimate() {
     window.addEventListener("load", () => {
-      gsap
-        .fromTo(
+      gsap.fromTo(
+        [
           this.heroTitleLines,
-          {
-            opacity: 0,
-            yPercent: 100,
-          },
-          {
-            opacity: 1,
-            yPercent: 0,
-            duration: 1.2,
-            delay: 2.5,
-            ease: "power3.out",
-            //stagger: 0.1,
-          }
-        )
-        .fromTo(
           this.heroButtonWrapper.querySelector(".btn__link"),
-          {
-            opacity: 0,
-          },
-          {
-            opacity: 1,
-            duration: 0.6,
-            ease: "power3.out",
-          }
-        );
+        ],
+        {
+          yPercent: 100,
+        },
+        {
+          yPercent: 0,
+          duration: 1.2,
+          delay: 2.5,
+          ease: "power3.out",
+          //stagger: 0.1,
+        }
+      );
     });
   }
 
