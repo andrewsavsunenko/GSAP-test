@@ -4,12 +4,12 @@ class App {
     this._createMask();
 
     this.animatedText = [
-      ...document.querySelectAll("[text-animate] span.word span"),
+      ...document.querySelectorAll("[text-animate] span.word span"),
     ];
-    this.animatedHeroTitle = [
-      ...document.querySelectAll("h1[hero-title-animate] span.line span"),
-    ];
-    this.heroTitleWrapper = querySelector(".hero__title--wrapper");
+    // this.animatedHeroTitle = [
+    //   ...document.querySelectorAll("h1[hero-title-animate] span.line span"),
+    // ];
+    // this.heroTitleWrapper = querySelector(".hero__title--wrapper");
 
     this._textAnimate();
     this._heroTitleAnimate();
