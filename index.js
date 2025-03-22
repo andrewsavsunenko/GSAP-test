@@ -8,7 +8,7 @@ class App {
     ];
     this.heroTitleWrapper = document.querySelector(".hero__title--wrapper");
     this.heroTitleLines = [
-      ...heroTitleWrapper.querySelectorAll("span.line span"),
+      ...heroTitleWrapper.querySelectorAll(".hero-title-item span.line span"),
     ];
 
     //
