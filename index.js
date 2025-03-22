@@ -99,7 +99,7 @@ class App {
           delay: 2.5,
           ease: "power3.out",
           stagger: {
-            amount: 0.1,
+            amount: 0.16,
           },
         }
       );
