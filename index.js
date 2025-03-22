@@ -6,10 +6,6 @@ class App {
     this.animatedText = [
       ...document.querySelectorAll("[text-animate] span.word span"),
     ];
-    /// this.animatedHeroTitle = [
-    //   ...document.querySelectorAll("h1[hero-title-animate] span.line span"),
-    // ];
-    // this.heroTitleWrapper = querySelector(".hero__title--wrapper");
 
     this._textAnimate();
     this._heroTitleAnimate();
