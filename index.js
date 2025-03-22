@@ -6,7 +6,7 @@ class App {
     this.animatedText = [
       ...document.querySelectorAll("[text-animate] span.word span"),
     ];
-
+    //
     this._textAnimate();
     this._heroTitleAnimate();
 
