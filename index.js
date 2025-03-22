@@ -36,7 +36,7 @@ class App {
       .forEach(function (item) {
         let c = item.innerHTML;
         item.innerHTML =
-          "<span style='display:block; margin-right:1px;'>" + c + "</span>";
+          "<span style='display:block; padding-right:1px;'>" + c + "</span>";
       });
   }
 
