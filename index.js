@@ -1,7 +1,7 @@
 class App {
   constructor() {
-    let splitText;
-    let splitHeroTitle;
+    this.splitText;
+    this.splitHeroTitle;
 
     this._runSplit();
     this._createMask();
