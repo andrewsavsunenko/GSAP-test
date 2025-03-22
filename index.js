@@ -60,7 +60,7 @@ class App {
       );
 
       ScrollTrigger.create({
-        trigger: this,
+        trigger: textNode,
         start: "top 84%",
         end: "top 32%",
         onEnter: () => {
