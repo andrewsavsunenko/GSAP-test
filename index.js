@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelectorAll("[text-split] span.line")
     .forEach(function (item) {
-      let c = item.innerHTML();
+      let c = item.innerHTML;
       item.innerHTML =
         "<span style='display:block; margin-right:1px;'>" + c + "</span>";
     }); 
