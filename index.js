@@ -14,7 +14,7 @@ class App {
       ),
     ];
 
-    this.heroButtonWrapper = document.querySelector(".btn__wrapper.hero");
+    this.heroButtonWrapper = document.querySelector(".btn__wrapper");
 
     this._textAnimate();
     this._heroTitleAnimate();
@@ -91,18 +91,15 @@ class App {
   _heroTitleAnimate() {
     window.addEventListener("load", () => {
       gsap.fromTo(
-        [
-          this.heroTitleLines,
-          this.heroButtonWrapper.querySelector(".btn__link"),
-        ],
+        this.heroTitleLines,
         {
           yPercent: 100,
         },
         {
           yPercent: 0,
-          duration: 1.2,
-          delay: 2.5,
-          ease: "power3.out",
+          duration: 0.8,
+          delay: 2.4,
+          ease: "power2.out",
           //stagger: 0.1,
         }
       );
