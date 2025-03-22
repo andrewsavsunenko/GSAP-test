@@ -96,11 +96,11 @@ class App {
           this.heroButtonWrapper.querySelector(".btn__link"),
         ],
         {
-          yPercent: 95,
+          yPercent: 100,
         },
         {
           yPercent: 0,
-          duration: 1.6,
+          duration: 1.2,
           delay: 2.4,
           ease: "power3.out",
           stagger: { amount: 0.24 },
