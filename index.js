@@ -79,7 +79,7 @@ class App {
     });
   }
 
-  heroTitleAnimate() {
+  _heroTitleAnimate() {
     window.addEventListener("load", () => {
       $(".hero__title--wrapper").each(function () {
         gsap.fromTo(
