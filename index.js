@@ -103,7 +103,7 @@ class App {
           duration: 0.68,
           delay: 2.9,
           ease: "power3.out",
-          stagger: { amount: 0.16 },
+          stagger: { amount: 0.12 },
         }
       );
     });
