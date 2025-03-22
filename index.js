@@ -43,9 +43,9 @@ class App {
   }
 
   _textAnimate() {
-    let tm = gsap.timeline({ paused: true });
-
     this.animatedText.forEach((textNode) => {
+      let tm = gsap.timeline({ paused: true });
+
       tm.fromTo(
         textNode,
         {
@@ -60,7 +60,7 @@ class App {
       );
 
       ScrollTrigger.create({
-        trigger: textNode,
+        trigger: this,
         start: "top 84%",
         end: "top 32%",
         onEnter: () => {
