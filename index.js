@@ -1,10 +1,15 @@
 class App {
   constructor() {
-    // this.splitText = null;
-    // this.splitHeroTitle = null;
-
     this._runSplit();
     this._createMask();
+
+    this.animatedText = [
+      ...document.querySelectAll("[text-animate] span.word span"),
+    ];
+    this.animatedHeroTitle = [
+      ...document.querySelectAll("h1[hero-title-animate] span.line span"),
+    ];
+    this.heroTitleWrapper = querySelector(".hero__title--wrapper");
 
     this._textAnimate();
     this._heroTitleAnimate();
@@ -44,9 +49,9 @@ class App {
   _textAnimate() {
     let tm = gsap.timeline({ paused: true });
 
-    $("[text-animate] span.word span").each(function () {
+    this.animatedText.forEach((textNode) => {
       tm.fromTo(
-        $(this),
+        textNode,
         {
           yPercent: 95,
         },
@@ -57,24 +62,24 @@ class App {
           //stagger: { /*amount: 0.64*/ each: 0.16 },
         }
       );
-    });
 
-    ScrollTrigger.create({
-      trigger: $(this),
-      start: "top 84%",
-      end: "top 32%",
-      onEnter: () => {
-        tm.play();
-      },
-    });
+      ScrollTrigger.create({
+        trigger: textNode,
+        start: "top 84%",
+        end: "top 32%",
+        onEnter: () => {
+          tm.play();
+        },
+      });
 
-    ScrollTrigger.create({
-      trigger: $(this),
-      start: "top 101%",
-      onLeaveBack: () => {
-        tm.progress(0);
-        tm.pause();
-      },
+      ScrollTrigger.create({
+        trigger: textNode,
+        start: "top 101%",
+        onLeaveBack: () => {
+          tm.progress(0);
+          tm.pause();
+        },
+      });
     });
   }
 
@@ -82,7 +87,7 @@ class App {
     window.addEventListener("load", () => {
       $(".hero__title--wrapper").each(function () {
         gsap.fromTo(
-          $(this).find("h1[hero-title-animate] span.line span"),
+          document.find("h1[hero-title-animate] span.line span"),
           {
             yPercent: 100,
           },
