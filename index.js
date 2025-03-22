@@ -96,7 +96,7 @@ class App {
           this.heroButtonWrapper.querySelector(".btn__link"),
         ],
         {
-          yPercent: 100,
+          yPercent: 95,
         },
         {
           yPercent: 0,
