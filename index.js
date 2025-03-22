@@ -6,6 +6,11 @@ class App {
     this.animatedText = [
       ...document.querySelectorAll("[text-animate] span.word span"),
     ];
+    this.heroTitleWrapper = document.querySelector(".hero__title--wrapper");
+    this.heroTitleLines = [
+      ...heroTitleWrapper.querySelectorAll("span.line span"),
+    ];
+
     //
     this._textAnimate();
     this._heroTitleAnimate();
@@ -80,26 +85,22 @@ class App {
   }
 
   _heroTitleAnimate() {
-    window.addEventListener("load", () => {
-      $(".hero__title--wrapper").each(function () {
-        gsap.fromTo(
-          document.find("h1[hero-title-animate] span.line span"),
-          {
-            yPercent: 100,
-          },
-          {
-            yPercent: 0,
-            duration: 0.68,
-            delay: 2.5,
-            axis: "y",
-            ease: "power3.out",
-            stagger: {
-              amount: 0.32,
-            },
-          }
-        );
-      });
-    });
+    gsap.fromTo(
+      heroTitleLines,
+      {
+        yPercent: 100,
+      },
+      {
+        yPercent: 0,
+        duration: 0.68,
+        delay: 2.5,
+        axis: "y",
+        ease: "power3.out",
+        stagger: {
+          amount: 0.32,
+        },
+      }
+    );
   }
 
   _projectsListAnimate() {
