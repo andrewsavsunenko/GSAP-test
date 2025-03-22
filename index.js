@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let c = item.getHTML();
       item.innerHTML =
         "<span style='display:block; margin-right:1px;'>" + c + "</span>";
-    });
+    }); 
 
   // Animation for H2 Titles
   $("[text-animate] span.word span").each(function () {
