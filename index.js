@@ -88,7 +88,7 @@ class App {
 
   _heroTitleAnimate() {
     gsap.fromTo(
-      heroTitleLines,
+      this.heroTitleLines,
       {
         yPercent: 100,
       },
