@@ -14,9 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   runSplit();
 
   //adding a <span> element to create a mask
-  document
-    .querySelectorAll("[text-split] span.word")
-    .forEach(function (item) {
+  $("[text-split] span.word").each(function (item) {
       let c = item.getHTML();
       item.innerHTML =
         "<span style='display:block; margin-right:1px;'>" + c + "</span>";
@@ -219,11 +217,11 @@ window.addEventListener("load", () => {
         yPercent: 0,
         duration: 0.68,
         delay: 2.5,
-        //axis:"y",
+        axis:"y",
         ease: "power3.out", 
-        // stagger: {
-        //   amount: 0.01,
-        // },
+        stagger: {
+          amount: 0.32,
+        },
       }
     )
   })
