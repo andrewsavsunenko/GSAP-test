@@ -101,7 +101,7 @@ class App {
             duration: 1.2,
             delay: 2.5,
             ease: "power3.out",
-            stagger: 0.1,
+            //stagger: 0.1,
           }
         )
         .fromTo(
