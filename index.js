@@ -102,8 +102,8 @@ class App {
           yPercent: 0,
           duration: 0.68,
           delay: 2.4,
-          ease: "power2.out",
-          stagger: 0.2,
+          ease: "power3.out",
+          stagger: 0.16,
         }
       );
     });
