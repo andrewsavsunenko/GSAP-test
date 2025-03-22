@@ -205,7 +205,7 @@ class App {
     });
   }
 
-  onResize() {
+  _onResize() {
     let w = window.innerWidth;
     console.log("innerWidth= " + window.innerWidth);
     console.log("w= " + w);
