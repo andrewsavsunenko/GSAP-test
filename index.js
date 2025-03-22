@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   runSplit();
 
-  //adding a <span> element to create a mask
+  //adding a <span> to [text-split] to create a mask 
   document
     .querySelectorAll("[text-split] span.line")
     .forEach(function (item) {
