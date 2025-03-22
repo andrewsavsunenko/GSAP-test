@@ -1,6 +1,7 @@
 class App {
   constructor() {
     let splitText;
+    let splitHeroTitle;
 
     this._runSplit();
     this._createMask();
@@ -15,12 +16,12 @@ class App {
   }
 
   _runSplit() {
-    splitText = new SplitType("[text-split]", {
+    this.splitText = new SplitType("[text-split]", {
       types: "words",
       tagName: "span",
     });
 
-    splitHeroTitle = new SplitType("[hero-title-animate]", {
+    this.splitHeroTitle = new SplitType("[hero-title-animate]", {
       types: "lines",
       tagName: "span",
     });
