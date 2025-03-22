@@ -222,7 +222,7 @@ window.addEventListener("load", () => {
         stagger: {
           amount: 0.32,
         },
-      }
+      },0
     )
   })
 });
