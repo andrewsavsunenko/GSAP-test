@@ -94,9 +94,11 @@ class App {
         .fromTo(
           this.heroTitleLines,
           {
+            opacity: 0,
             yPercent: 100,
           },
           {
+            opacity: 1,
             yPercent: 0,
             duration: 1.2,
             delay: 2.5,
@@ -105,7 +107,7 @@ class App {
           }
         )
         .fromTo(
-          this.heroButtonWrapper.querySelector("btn__link"),
+          this.heroButtonWrapper.querySelector(".btn__link"),
           {
             opacity: 0,
           },
