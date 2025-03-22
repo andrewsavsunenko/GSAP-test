@@ -6,6 +6,7 @@ class App {
     this.animatedText = [
       ...document.querySelectorAll("[text-animate] span.word span"),
     ];
+
     this.heroTitleWrapper = document.querySelector(".hero__title--wrapper");
     this.heroTitleLines = [
       ...this.heroTitleWrapper.querySelectorAll(
@@ -13,7 +14,8 @@ class App {
       ),
     ];
 
-    //
+    this.heroButtonWrapper = document.querySelector(".btn__wrapper.hero");
+
     this._textAnimate();
     this._heroTitleAnimate();
 
@@ -89,13 +91,13 @@ class App {
   _heroTitleAnimate() {
     window.addEventListener("load", () => {
       gsap.fromTo(
-        this.heroTitleLines,
+        [this.heroTitleLines, this.heroButtonWrapper.find("tn__link.hero")],
         {
           yPercent: 100,
         },
         {
           yPercent: 0,
-          duration: 0.8,
+          duration: 1.2,
           delay: 2.5,
           ease: "power3.out",
           stagger: 0.1,
