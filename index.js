@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }); 
 
   // Animation for H2 Titles
-  $("[text-animate] span.line span").each(function () {
+  $("[text-animate] span.word span").each(function () {
     
     let tm = gsap.timeline({ paused: true });
     
