@@ -95,12 +95,10 @@ class App {
         },
         {
           yPercent: 0,
-          duration: 2,
+          duration: 1.6,
           delay: 2.5,
           ease: "power3.out",
-          stagger: {
-            amount: 0.16,
-          },
+          stagger: 0.1,
         }
       );
     });
