@@ -95,7 +95,7 @@ class App {
         },
         {
           yPercent: 0,
-          duration: 0.68,
+          duration: 2,
           delay: 2.5,
           ease: "power3.out",
           stagger: {
