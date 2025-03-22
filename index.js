@@ -100,10 +100,10 @@ class App {
         },
         {
           yPercent: 0,
-          duration: 1.6,
+          duration: 0.68,
           delay: 2.4,
           ease: "power2.out",
-          //stagger: 0.1,
+          stagger: 0.2,
         }
       );
     });
