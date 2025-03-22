@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let splitText;
   function runSplit() {
     splitText = new SplitType("[text-split]", {
-      types: "lines",
+      types: "lines,words",
       tagName: "span",
     });
     console.log("Text Split Run");
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //adding a <span> to [text-split] to create a mask 
   document
-    .querySelectorAll("[text-split] span.line")
+    .querySelectorAll("[text-split] span.word")
     .forEach(function (item) {
       let c = item.innerHTML;
       item.innerHTML =
@@ -208,8 +208,18 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", debounce(reloadSplit, 300));
 });
 
+
+
 //Preloader H1 Title Animation
 window.addEventListener("load", () => {
+  document
+    .querySelectorAll("h1[hero-title-animate] span.line")
+    .forEach(function (item) {
+      let c = item.innerHTML;
+      item.innerHTML =
+        "<span style='display:block; margin-right:1px;'>" + c + "</span>";
+    }); 
+
   $(".hero__title--wrapper")
   .each(function (){
     gsap.fromTo(
