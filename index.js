@@ -91,7 +91,10 @@ class App {
   _heroTitleAnimate() {
     window.addEventListener("load", () => {
       gsap.fromTo(
-        [this.heroTitleLines, this.heroButtonWrapper.find("tn__link.hero")],
+        [
+          this.heroTitleLines,
+          this.heroButtonWrapper.querySelector("tn__link.hero"),
+        ],
         {
           yPercent: 100,
         },
