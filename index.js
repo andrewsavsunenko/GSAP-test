@@ -93,7 +93,7 @@ class App {
       gsap.fromTo(
         [
           this.heroTitleLines,
-          this.heroButtonWrapper.querySelector(".btn__link"),
+          // this.heroButtonWrapper.querySelector(".btn__link"),
         ],
         {
           yPercent: 100,
