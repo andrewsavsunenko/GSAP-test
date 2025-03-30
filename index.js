@@ -13,15 +13,18 @@ class App {
         ".hero-title-item span.line span"
       ),
     ];
-
     this.heroButtonWrapper = document.querySelector(".btn__wrapper");
 
+    this.visionPath = $(".vision__line--svg").drawsvg();
+
     this._textAnimate();
+    this._dividersAnimate();
     this._heroTitleAnimate();
 
     this._projectsListAnimate();
-    this._dividersAnimate();
+    this._visionLineDraw();
     this._partnersLogosAnimate();
+
     this._onResize();
   }
 
@@ -88,63 +91,6 @@ class App {
     });
   }
 
-  _heroTitleAnimate() {
-    window.addEventListener("load", () => {
-      gsap.fromTo(
-        [
-          this.heroTitleLines,
-          this.heroButtonWrapper.querySelector(".btn__link"),
-        ],
-        {
-          yPercent: 100,
-        },
-        {
-          yPercent: 0,
-          duration: 1.2,
-          delay: 2.4,
-          ease: "power3.out",
-          stagger: { amount: 0.2 },
-        }
-      );
-    });
-  }
-
-  _projectsListAnimate() {
-    $("[projectsList-animation]").each(function () {
-      let tc = gsap.timeline({ paused: true });
-
-      tc.fromTo(
-        $(this),
-        {
-          yPercent: 42,
-        },
-        {
-          yPercent: 0,
-          duration: 0.68,
-          ease: "power2.out",
-        }
-      );
-
-      ScrollTrigger.create({
-        trigger: $(this),
-        start: "top 96%",
-        end: "top 72%",
-        onEnter: () => {
-          tc.play();
-        },
-      });
-
-      ScrollTrigger.create({
-        trigger: $(this),
-        start: "top 120%",
-        onLeaveBack: () => {
-          tc.progress(0);
-          tc.pause();
-        },
-      });
-    });
-  }
-
   _dividersAnimate() {
     $("[divider-animation]").each(function () {
       let td = gsap.timeline({ paused: true });
@@ -169,6 +115,75 @@ class App {
         onLeaveBack: () => {
           td.progress(0);
           td.pause();
+        },
+      });
+    });
+  }
+
+  _heroTitleAnimate() {
+    window.addEventListener("load", () => {
+      gsap.fromTo(
+        [
+          this.heroTitleLines,
+          this.heroButtonWrapper.querySelector(".btn__link"),
+        ],
+        {
+          yPercent: 100,
+        },
+        {
+          yPercent: 0,
+          duration: 1.2,
+          delay: 2.4,
+          ease: "power3.out",
+          stagger: { amount: 0.2 },
+        }
+      );
+    });
+  }
+
+  // section-based animations
+
+  _projectsListAnimate() {
+    $("[projectsList-animation]").each(function () {
+      let tc = gsap.timeline({ paused: true });
+
+      if (window.innerWidth > 991) {
+        tc.fromTo(
+          $(this),
+          { yPercent: 42 }, //Desktop
+          {
+            yPercent: 0,
+            duration: 0.68,
+            ease: "power2.out",
+          }
+        );
+      } else if (window.innerWidth < 479) {
+        tc.fromTo(
+          $(this),
+          { yPercent: 10 }, //Mobile
+          {
+            yPercent: 0,
+            duration: 0.68,
+            ease: "power2.out",
+          }
+        );
+      }
+
+      ScrollTrigger.create({
+        trigger: $(this),
+        start: "top 96%",
+        end: "top 72%",
+        onEnter: () => {
+          tc.play();
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: $(this),
+        start: "top 120%",
+        onLeaveBack: () => {
+          tc.progress(0);
+          tc.pause();
         },
       });
     });
@@ -213,6 +228,15 @@ class App {
     });
   }
 
+  _visionLineDraw() {
+    ScrollTrigger.create({
+      trigger: this.visionPath,
+      start: "top 28%",
+      end: "bottom 48%",
+      onUpdate: (self) => this.visionPath.drawsvg("progress", self.progress),
+    });
+  }
+
   _onResize() {
     let w = window.innerWidth;
     console.log("innerWidth= " + window.innerWidth);
@@ -248,4 +272,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 console.log("gsap works");
-console.log("GitHub Dev + Pages");
+console.log("GitHubPages Worked");
