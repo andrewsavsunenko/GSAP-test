@@ -150,7 +150,7 @@ class App {
     });
     console.log("UkiyoRun Elements");
     console.log("444567");
-    console.log(this.imgParallax);
+    console.log("here is the uniyo element" + this.imgParallax);
     console.log("UkiyoRun Elements");
   }
 
