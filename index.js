@@ -22,7 +22,7 @@ class App {
 
     this._textAnimate();
     this._dividersAnimate();
-    this._heroTitleAnimate();
+    //this._heroTitleAnimate();
 
     this._projectsListAnimate();
     this._visionLineDraw();
