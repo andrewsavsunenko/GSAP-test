@@ -13,7 +13,6 @@ class App {
         ".hero-title-item span.line span"
       ),
     ];
-
     this.heroButtonWrapper = document.querySelector(".btn__wrapper");
 
     this.visionPath = $(".vision__line--svg").drawsvg();
