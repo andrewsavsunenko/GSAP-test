@@ -7,12 +7,12 @@ class App {
       ...document.querySelectorAll("[text-animate] span.word span"),
     ];
 
-    /*this.heroTitleWrapper = document.querySelector(".hero__title--wrapper");
+    this.heroTitleWrapper = document.querySelector(".hero__title--wrapper");
     this.heroTitleLines = [
       ...this.heroTitleWrapper.querySelectorAll(
         ".hero-title-item span.line span"
       ),
-    ];*/
+    ];
 
     this.heroButtonWrapper = document.querySelector(".btn__wrapper");
 
@@ -23,7 +23,7 @@ class App {
 
     this._textAnimate();
     this._dividersAnimate();
-    //this._heroTitleAnimate();
+    this._heroTitleAnimate();
 
     this._projectsListAnimate();
     this._visionLineDraw();
@@ -124,7 +124,7 @@ class App {
     });
   }
 
-  /*_heroTitleAnimate() {
+  _heroTitleAnimate() {
     window.addEventListener("load", () => {
       gsap.fromTo(
         [
@@ -142,16 +142,6 @@ class App {
           stagger: { amount: 0.2 },
         }
       );
-    });
-  }*/
-
-  _ukiyoInit() {
-    this.imgParallax.forEach((el) => {
-      new Ukiyo(el, {
-        scale: 1,
-        wrapperClass: "parallax-wrapper",
-      });
-      console.log("444567");
     });
   }
 
