@@ -149,7 +149,9 @@ class App {
       speed: 1.2,
     });
     console.log("UkiyoRun Elements");
+    console.log("444567");
     console.log(this.imgParallax);
+    console.log("UkiyoRun Elements");
   }
 
   // section-based animations
