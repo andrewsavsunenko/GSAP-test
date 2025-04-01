@@ -146,14 +146,12 @@ class App {
   }*/
 
   _ukiyoInit() {
-    if (!this.imgParallax.length) {
-      console.warn("No elements found with [parallax] attribute.");
-      return;
-    }
-
     this.imgParallax.forEach((el) => {
-      const parallax = new Ukiyo(el);
-      console.log("worked on", el);
+      const parallax = new Ukiyo(el, {
+        scale: 1,
+        speed: 1,
+        wrapperClass: "ukiyo--wrapper",
+      });
     });
     console.log("444567");
   }
