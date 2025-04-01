@@ -145,13 +145,11 @@ class App {
   }
 
   _ukiyoInit() {
-    new Ukiyo(this.imgParallax, {
-      speed: 1.2,
+    this.imgParallax.forEach((el) => {
+      const parallax = new Ukiyo(el);
+      console.log(el);
     });
-    console.log("UkiyoRun Elements");
     console.log("444567");
-    console.log("here is the uniyo element" + this.imgParallax);
-    console.log("UkiyoRun Elements");
   }
 
   // section-based animations
