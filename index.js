@@ -17,6 +17,8 @@ class App {
 
     this.visionPath = $(".vision__line--svg").drawsvg();
 
+    this.imgParallax = document.querySelectorAll("[imgParallax]");
+    this._ukiyoInit();
     this._textAnimate();
     this._dividersAnimate();
     this._heroTitleAnimate();
@@ -141,6 +143,9 @@ class App {
     });
   }
 
+  _ukiyoInit() {
+    new Ukiyo(this.imgParallax);
+  }
   // section-based animations
 
   _projectsListAnimate() {
