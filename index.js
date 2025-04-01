@@ -148,7 +148,7 @@ class App {
     new Ukiyo(this.imgParallax, {
       speed: 1.2,
     });
-    console.log("UkiyoRun");
+    console.log("UkiyoRun Elements");
     console.log(this.imgParallax);
   }
 
