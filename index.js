@@ -148,7 +148,7 @@ class App {
   _ukiyoInit() {
     this.imgParallax.forEach((el) => {
       new Ukiyo(el, {
-        scale: 1.3,
+        scale: 1,
         wrapperClass: "parallax-wrapper",
       });
       console.log("444567");
