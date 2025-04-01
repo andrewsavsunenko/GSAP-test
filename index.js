@@ -148,6 +148,8 @@ class App {
     new Ukiyo(this.imgParallax, {
       speed: 1.2,
     });
+    console.log("UkiyoRun");
+    console.log(this.imgParallax);
   }
 
   // section-based animations
