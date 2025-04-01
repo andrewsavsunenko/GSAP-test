@@ -7,12 +7,12 @@ class App {
       ...document.querySelectorAll("[text-animate] span.word span"),
     ];
 
-    this.heroTitleWrapper = document.querySelector(".hero__title--wrapper");
+    /*this.heroTitleWrapper = document.querySelector(".hero__title--wrapper");
     this.heroTitleLines = [
       ...this.heroTitleWrapper.querySelectorAll(
         ".hero-title-item span.line span"
       ),
-    ];
+    ];*/
     this.heroButtonWrapper = document.querySelector(".btn__wrapper");
 
     this.visionPath = $(".vision__line--svg").drawsvg();
