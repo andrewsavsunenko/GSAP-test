@@ -17,7 +17,7 @@ class App {
 
     this.visionPath = $(".vision__line--svg").drawsvg();
 
-    this.imgParallax = document.querySelectorAll("[imgParallax]");
+    this.imgParallax = document.querySelectorAll("[imgparallax]");
     this._ukiyoInit();
 
     this._textAnimate();
