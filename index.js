@@ -22,7 +22,7 @@ class App {
 
     this._textAnimate();
     this._dividersAnimate();
-    this._heroTitleAnimate();
+    //this._heroTitleAnimate();
 
     this._projectsListAnimate();
     this._visionLineDraw();
@@ -123,7 +123,7 @@ class App {
     });
   }
 
-  _heroTitleAnimate() {
+  /*_heroTitleAnimate() {
     window.addEventListener("load", () => {
       gsap.fromTo(
         [
@@ -142,7 +142,7 @@ class App {
         }
       );
     });
-  }
+  }*/
 
   _ukiyoInit() {
     if (!this.imgParallax.length) {
