@@ -145,7 +145,9 @@ class App {
   }
 
   _ukiyoInit() {
-    new Ukiyo(this.imgParallax);
+    new Ukiyo(this.imgParallax, {
+      speed: 1.2,
+    });
   }
 
   // section-based animations
