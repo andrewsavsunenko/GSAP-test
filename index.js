@@ -234,7 +234,7 @@ class App {
     ScrollTrigger.create({
       trigger: this.visionPath,
       start: "top 48%",
-      end: "bottom 24%",
+      end: "bottom 18%",
       onUpdate: (self) => this.visionPath.drawsvg("progress", self.progress),
     });
   }
