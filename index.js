@@ -3,8 +3,10 @@ class App {
     this._runSplit();
     this._createMask();
 
-    this.animatedText = [
-      ...document.querySelectorAll("[text-animate] span.word span"),
+    this.animatedText = [...document.querySelectorAll("[text-animate]")];
+
+    this.aboutYearNumbers = [
+      ...document.querySelectorAll("[timelineNumber-animate]"),
     ];
 
     this.heroTitleWrapper = document.querySelector(".hero__title--wrapper");
@@ -17,11 +19,10 @@ class App {
 
     this.visionPath = $(".vision__line--svg").drawsvg();
 
-    this.imgParallax = document.querySelectorAll("[parallax]");
-
     this._textAnimate();
     this._dividersAnimate();
     this._heroTitleAnimate();
+    this._timelineNumbersAnimate();
 
     this._projectsListAnimate();
     this._visionLineDraw();
@@ -41,6 +42,11 @@ class App {
       tagName: "span",
     });
 
+    const splitAboutTimeline = new SplitType("[timelineNumber-animate]", {
+      types: "chars",
+      tagName: "span",
+    });
+
     console.log("Text Split Run");
   }
 
@@ -52,7 +58,9 @@ class App {
       .forEach(function (item) {
         let c = item.innerHTML;
         item.innerHTML =
-          "<span style='display:block; padding-right:1px;'>" + c + "</span>";
+          "<span style='display:block; padding-right:0.078rem;'>" +
+          c +
+          "</span>";
       });
   }
 
@@ -61,22 +69,22 @@ class App {
       let tm = gsap.timeline({ paused: true });
 
       tm.fromTo(
-        textNode,
+        textNode.querySelectorAll("span.word span"),
         {
           yPercent: 95,
         },
         {
           yPercent: 0,
-          duration: 0.68,
+          duration: 1,
           ease: "power3.out",
-          //stagger: { /*amount: 0.64*/ each: 0.16 },
+          stagger: { each: 0.02 },
         }
       );
 
       ScrollTrigger.create({
         trigger: textNode,
-        start: "top 84%",
-        end: "top 32%",
+        start: "top 80%",
+        end: "top 28%",
         onEnter: () => {
           tm.play();
         },
@@ -111,12 +119,50 @@ class App {
           td.play();
         },
       });
+
       ScrollTrigger.create({
         trigger: $(this),
         start: "top 101%",
         onLeaveBack: () => {
           td.progress(0);
           td.pause();
+        },
+      });
+    });
+  }
+
+  _timelineNumbersAnimate() {
+    this.aboutYearNumbers.forEach((item) => {
+      let tm = gsap.timeline({ paused: true });
+
+      tm.fromTo(
+        item.querySelectorAll("span.char"),
+        {
+          yPercent: 0,
+        },
+        {
+          yPercent: -140,
+          duration: 1.2,
+          ease: "power2.out",
+          stagger: { each: 0.12 },
+        }
+      );
+
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top 67%",
+        end: "top 28%",
+        onEnter: () => {
+          tm.play();
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top 101%",
+        onLeaveBack: () => {
+          tm.progress(0);
+          tm.pause();
         },
       });
     });
@@ -153,16 +199,6 @@ class App {
         tc.fromTo(
           $(this),
           { yPercent: 42 }, //Desktop
-          {
-            yPercent: 0,
-            duration: 0.68,
-            ease: "power2.out",
-          }
-        );
-      } else if (window.innerWidth < 479) {
-        tc.fromTo(
-          $(this),
-          { yPercent: 10 }, //Mobile
           {
             yPercent: 0,
             duration: 0.68,
@@ -234,7 +270,7 @@ class App {
     ScrollTrigger.create({
       trigger: this.visionPath,
       start: "top 48%",
-      end: "bottom 18%",
+      end: "bottom 12%",
       onUpdate: (self) => this.visionPath.drawsvg("progress", self.progress),
     });
   }
