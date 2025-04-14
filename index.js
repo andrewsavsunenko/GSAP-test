@@ -20,7 +20,7 @@ class App {
     this.visionPath = $(".vision__line--svg").drawsvg();
 
     this.footerLogoText = document.querySelector("[footerLogoText]");
-    //this.footerWrapper = document.querySelector("[footerWrapper]");
+    this.footerWrapper = document.querySelector("[footerWrapper]");
 
     this._textAnimate();
     this._dividersAnimate();
@@ -215,20 +215,20 @@ class App {
     );
 
     ScrollTrigger.create({
-      trigger: "[footerWrapper]",
+      trigger: this.footerWrapper,
       start: "bottom 100%",
       //end: "bottom 100%",
       onEnter: () => {
-        tm.play();
+        tml.play();
       },
     });
 
     ScrollTrigger.create({
-      trigger: "[footerWrapper]",
+      trigger: this.footerWrapper,
       start: "bottom 150%",
       onLeaveBack: () => {
-        tm.progress(0);
-        tm.pause();
+        tml.progress(0);
+        tml.pause();
       },
     });
   }
