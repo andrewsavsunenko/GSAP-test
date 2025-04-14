@@ -19,6 +19,9 @@ class App {
 
     this.visionPath = $(".vision__line--svg").drawsvg();
 
+    this.footerLogoText = $(".footerLogoText");
+    this.footerLogoWrapper = $(".footerLogoWrapper");
+
     this._textAnimate();
     this._dividersAnimate();
     this._heroTitleAnimate();
@@ -43,6 +46,11 @@ class App {
     });
 
     const splitAboutTimeline = new SplitType("[timelineNumber-animate]", {
+      types: "chars",
+      tagName: "span",
+    });
+
+    const footerLogoSplit = new SplitType(".footerLogoText", {
       types: "chars",
       tagName: "span",
     });
@@ -186,6 +194,41 @@ class App {
           stagger: { amount: 0.2 },
         }
       );
+    });
+  }
+
+  _footerLogoAnimate() {
+    let tml = gsap.timeline({ paused: true });
+
+    tml.fromTo(
+      this.footerLogoText.querySelectorAll("span.char"),
+      {
+        yPercent: 100,
+      },
+      {
+        yPercent: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: { amount: 0.2 },
+      }
+    );
+
+    ScrollTrigger.create({
+      trigger: this.footerLogoWrapper,
+      start: "top 67%",
+      end: "top 28%",
+      onEnter: () => {
+        tm.play();
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: this.footerLogoWrapper,
+      start: "top 80%",
+      onLeaveBack: () => {
+        tm.progress(0);
+        tm.pause();
+      },
     });
   }
 
