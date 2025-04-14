@@ -19,14 +19,10 @@ class App {
 
     this.visionPath = $(".vision__line--svg").drawsvg();
 
-    this.footerLogoText = document.querySelector("[footerLogoText]");
-    this.footerWrapper = document.querySelector("[footerWrapper]");
-
     this._textAnimate();
     this._dividersAnimate();
     this._timelineNumbersAnimate();
     this._heroTitleAnimate();
-    this._footerLogoAnimate();
 
     this._projectsListAnimate();
     this._visionLineDraw();
@@ -47,11 +43,6 @@ class App {
     });
 
     const splitAboutTimeline = new SplitType("[timelineNumber-animate]", {
-      types: "chars",
-      tagName: "span",
-    });
-
-    const footerLogoSplit = new SplitType("[footerLogoText]", {
       types: "chars",
       tagName: "span",
     });
@@ -198,41 +189,6 @@ class App {
     });
   }
 
-  _footerLogoAnimate() {
-    let tml = gsap.timeline({ paused: true });
-
-    tml.fromTo(
-      this.footerLogoText.querySelectorAll("span.char"),
-      {
-        yPercent: 100,
-      },
-      {
-        yPercent: 0,
-        delay: 0.5,
-        duration: 1,
-        ease: "power2.out",
-        stagger: { each: 0.2 },
-      }
-    );
-
-    ScrollTrigger.create({
-      trigger: this.footerWrapper,
-      start: "bottom 100%",
-      onEnter: () => {
-        tml.play();
-      },
-    });
-
-    ScrollTrigger.create({
-      trigger: this.footerWrapper,
-      start: "bottom 150%",
-      onLeaveBack: () => {
-        tml.progress(0);
-        tml.pause();
-      },
-    });
-  }
-
   // section-based animations
 
   _projectsListAnimate() {
@@ -354,4 +310,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 console.log("gsap works");
-console.log("GitHubPages Worked");
+console.log("GitHub Worked");
