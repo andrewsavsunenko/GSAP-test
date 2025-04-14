@@ -208,16 +208,15 @@ class App {
       },
       {
         yPercent: 0,
-        duration: 1.2,
+        duration: 1,
         ease: "power2.out",
-        stagger: { each: 0.08 },
+        stagger: { each: 0.12 },
       }
     );
 
     ScrollTrigger.create({
       trigger: this.footerWrapper,
       start: "bottom 100%",
-      //end: "bottom 100%",
       onEnter: () => {
         tml.play();
       },
