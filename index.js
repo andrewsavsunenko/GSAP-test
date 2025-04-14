@@ -19,8 +19,8 @@ class App {
 
     this.visionPath = $(".vision__line--svg").drawsvg();
 
-    this.footerLogoText = document.querySelector(".footerLogoText");
-    this.footerLogoWrapper = document.querySelector(".footerLogoWrapper");
+    this.footerLogoText = document.querySelector("[footerLogoText]");
+    this.footerLogoWrapper = document.querySelector("[footerLogoWrapper]");
 
     this._textAnimate();
     this._dividersAnimate();
@@ -51,7 +51,7 @@ class App {
       tagName: "span",
     });
 
-    const footerLogoSplit = new SplitType(".footerLogoText", {
+    const footerLogoSplit = new SplitType("[footerLogoText]", {
       types: "chars",
       tagName: "span",
     });
