@@ -216,8 +216,8 @@ class App {
 
     ScrollTrigger.create({
       trigger: this.footerLogoWrapper,
-      start: "top 67%",
-      end: "top 28%",
+      start: "bottom 110%",
+      end: "bottom 10%",
       onEnter: () => {
         tm.play();
       },
@@ -225,7 +225,7 @@ class App {
 
     ScrollTrigger.create({
       trigger: this.footerLogoWrapper,
-      start: "top 80%",
+      start: "bottom 101%",
       onLeaveBack: () => {
         tm.progress(0);
         tm.pause();
