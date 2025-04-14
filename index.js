@@ -19,8 +19,8 @@ class App {
 
     this.visionPath = $(".vision__line--svg").drawsvg();
 
-    this.footerLogoText = $(".footerLogoText");
-    this.footerLogoWrapper = $(".footerLogoWrapper");
+    this.footerLogoText = document.querySelector(".footerLogoText");
+    this.footerLogoWrapper = document.querySelector(".footerLogoWrapper");
 
     this._textAnimate();
     this._dividersAnimate();
