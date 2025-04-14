@@ -24,8 +24,9 @@ class App {
 
     this._textAnimate();
     this._dividersAnimate();
-    this._heroTitleAnimate();
     this._timelineNumbersAnimate();
+    this._heroTitleAnimate();
+    this._footerLogoAnimate();
 
     this._projectsListAnimate();
     this._visionLineDraw();
