@@ -20,7 +20,7 @@ class App {
     this.visionPath = $(".vision__line--svg").drawsvg();
 
     this.footerLogoText = document.querySelector("[footerLogoText]");
-    this.footerLogoWrapper = document.querySelector("[footerLogoWrapper]");
+    this.footerWrapper = document.querySelector("[footerWrapper]");
 
     this._textAnimate();
     this._dividersAnimate();
@@ -215,7 +215,7 @@ class App {
     );
 
     ScrollTrigger.create({
-      trigger: this.footerLogoWrapper,
+      trigger: this.footerWrapper,
       start: "bottom 110%",
       end: "bottom 10%",
       onEnter: () => {
@@ -224,7 +224,7 @@ class App {
     });
 
     ScrollTrigger.create({
-      trigger: this.footerLogoWrapper,
+      trigger: this.footerWrapper,
       start: "bottom 101%",
       onLeaveBack: () => {
         tm.progress(0);
