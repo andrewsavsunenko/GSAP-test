@@ -20,7 +20,7 @@ class App {
     this.visionPath = $(".vision__line--svg").drawsvg();
 
     this.footerLogoText = document.querySelector("[footerLogoText]");
-    this.footerWrapper = document.querySelector("[footerWrapper]");
+    //this.footerWrapper = document.querySelector("[footerWrapper]");
 
     this._textAnimate();
     this._dividersAnimate();
@@ -209,22 +209,22 @@ class App {
       {
         yPercent: 0,
         duration: 1.2,
-        ease: "power3.out",
+        ease: "power2.out",
         stagger: { each: 0.12 },
       }
     );
 
     ScrollTrigger.create({
-      trigger: this.footerWrapper,
-      start: "bottom 102%",
-      end: "bottom 100%",
+      trigger: "[footerWrapper]",
+      start: "bottom 100%",
+      //end: "bottom 100%",
       onEnter: () => {
         tm.play();
       },
     });
 
     ScrollTrigger.create({
-      trigger: this.footerWrapper,
+      trigger: "[footerWrapper]",
       start: "bottom 150%",
       onLeaveBack: () => {
         tm.progress(0);
