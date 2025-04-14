@@ -310,4 +310,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 console.log("gsap works");
-console.log("GitHub Worked");
+console.log("GitHub file Worked");
