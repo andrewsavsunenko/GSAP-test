@@ -1,13 +1,11 @@
 class App {
   constructor() {
+    this.isDesktop = window.innerWidth > 991;
+
     this._runSplit();
     this._createMask();
 
     this.animatedText = [...document.querySelectorAll("[text-animate]")];
-
-    this.aboutYearNumbers = [
-      ...document.querySelectorAll("[timelineNumber-animate]"),
-    ];
 
     this.heroTitleWrapper = document.querySelector(".hero__title--wrapper");
     this.heroTitleLines = [
@@ -19,17 +17,27 @@ class App {
 
     this.visionPath = $(".vision__line--svg").drawsvg();
 
+    this.aboutYearNumbers = [
+      ...document.querySelectorAll("[timelineNumber-animate]"),
+    ];
+
+    this.visionNumbers = [...document.querySelectorAll("[visionNumber]")];
+
     this._textAnimate();
     this._dividersAnimate();
-    this._timelineNumbersAnimate();
     this._heroTitleAnimate();
 
     this._projectsListAnimate();
-    this._visionLineDraw();
     this._partnersLogosAnimate();
+    this._visionLineDraw();
+    this._timelineNumbersAnimate();
+    this._visionNumbersAnimate();
 
     this._onResize();
+    this._onBack();
   }
+
+  // general animations
 
   _runSplit() {
     const splitText = new SplitType("[text-split]", {
@@ -43,6 +51,11 @@ class App {
     });
 
     const splitAboutTimeline = new SplitType("[timelineNumber-animate]", {
+      types: "chars",
+      tagName: "span",
+    });
+
+    const splitVisionNumbers = new SplitType("[visionNumber]", {
       types: "chars",
       tagName: "span",
     });
@@ -131,43 +144,6 @@ class App {
     });
   }
 
-  _timelineNumbersAnimate() {
-    this.aboutYearNumbers.forEach((item) => {
-      let tm = gsap.timeline({ paused: true });
-
-      tm.fromTo(
-        item.querySelectorAll("span.char"),
-        {
-          yPercent: 0,
-        },
-        {
-          yPercent: -140,
-          duration: 1.2,
-          ease: "power2.out",
-          stagger: { each: 0.12 },
-        }
-      );
-
-      ScrollTrigger.create({
-        trigger: item,
-        start: "top 67%",
-        end: "top 28%",
-        onEnter: () => {
-          tm.play();
-        },
-      });
-
-      ScrollTrigger.create({
-        trigger: item,
-        start: "top 101%",
-        onLeaveBack: () => {
-          tm.progress(0);
-          tm.pause();
-        },
-      });
-    });
-  }
-
   _heroTitleAnimate() {
     window.addEventListener("load", () => {
       gsap.fromTo(
@@ -195,21 +171,19 @@ class App {
     $("[projectsList-animation]").each(function () {
       let tc = gsap.timeline({ paused: true });
 
-      if (window.innerWidth > 991) {
-        tc.fromTo(
-          $(this),
-          { yPercent: 42 }, //Desktop
-          {
-            yPercent: 0,
-            duration: 0.68,
-            ease: "power2.out",
-          }
-        );
-      }
+      tc.fromTo(
+        $(this),
+        { yPercent: this.isDesktop ? 48 : 16 },
+        {
+          yPercent: 0,
+          duration: 0.68,
+          ease: this.isDesktop ? "power2.out" : "power1.out",
+        }
+      );
 
       ScrollTrigger.create({
         trigger: $(this),
-        start: "top 96%",
+        start: this.isDesktop ? "top 96%" : "top 98%",
         end: "top 72%",
         onEnter: () => {
           tc.play();
@@ -275,6 +249,87 @@ class App {
     });
   }
 
+  _timelineNumbersAnimate() {
+    this.aboutYearNumbers.forEach((item) => {
+      let tm = gsap.timeline({ paused: true });
+
+      tm.fromTo(
+        item.querySelectorAll("span.char"),
+        {
+          yPercent: 0,
+        },
+        {
+          yPercent: -140,
+          duration: 1.2,
+          ease: "power2.out",
+          stagger: { each: 0.12 },
+        }
+      );
+
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top 67%",
+        end: "top 28%",
+        onEnter: () => {
+          tm.play();
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top 101%",
+        onLeaveBack: () => {
+          tm.progress(0);
+          tm.pause();
+        },
+      });
+    });
+  }
+
+  _visionNumbersAnimate() {
+    this.visionNumbers.forEach((item, i) => {
+      let tm = gsap.timeline({ paused: true });
+
+      tm.fromTo(
+        item.querySelectorAll("span.char"),
+        {
+          yPercent: this.isDesktop ? -120 : 0,
+        },
+        {
+          yPercent: this.isDesktop ? 0 : -100,
+          duration: 1.2,
+          ease: "power2.out",
+          stagger: { each: 0.12 },
+        }
+      );
+
+      ScrollTrigger.create({
+        trigger: item,
+        start: this.isDesktop
+          ? i === 1
+            ? "top 34%"
+            : i === 5
+            ? "top 54%"
+            : "top 62%"
+          : "top 82%", // on mobile
+        onEnter: () => {
+          tm.play();
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top 101%",
+        onLeaveBack: () => {
+          tm.progress(0);
+          tm.pause();
+        },
+      });
+    });
+  }
+
+  // resize window-reload function
+
   _onResize() {
     let w = window.innerWidth;
     console.log("innerWidth= " + window.innerWidth);
@@ -282,7 +337,7 @@ class App {
 
     function reloadSplit() {
       console.log("reloadSplit() worked");
-      if (w !== window.innerWidth && window.innerWidth > 991) {
+      if (w !== window.innerWidth && this.isDesktop) {
         w = window.innerWidth;
         // splitText.revert();
         // runSplit();
@@ -300,9 +355,18 @@ class App {
         timer = setTimeout(func, time);
       };
     }
-
     window.addEventListener("resize", debounce(reloadSplit, 300));
   }
+
+  _onBack() {
+    window.addEventListener("pageshow", function (event) {
+      if (event.persisted) {
+        location.reload();
+      }
+    });
+  }
+
+  // add on go back function that splits the text again
 }
 
 document.addEventListener("DOMContentLoaded", () => {
