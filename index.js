@@ -7,13 +7,11 @@ class App {
 
     this.animatedText = [...document.querySelectorAll("[text-animate]")];
 
-    this.heroTitleWrapper = document.querySelector(".hero__title--wrapper");
-    this.heroTitleLines = [
-      ...this.heroTitleWrapper.querySelectorAll(
-        ".hero-title-item span.line span"
-      ),
-    ];
-    this.heroButtonWrapper = document.querySelector(".btn__wrapper");
+    this.preloader = document.querySelectorAll("[preloader]");
+
+    this.heroTitle = document.querySelector("[hero-title-animate]");
+    this.heroDescription = document.querySelector("[hero-description-animate]");
+    this.heroButton = document.querySelector("[hero-button-animate]");
 
     this.visionPath = $(".vision__line--svg").drawsvg();
 
@@ -24,8 +22,8 @@ class App {
     this.visionNumbers = [...document.querySelectorAll("[visionNumber]")];
 
     this._textAnimate();
+    this._heroTextAnimate();
     this._dividersAnimate();
-    this._heroTitleAnimate();
 
     this._projectsListAnimate();
     this._partnersLogosAnimate();
@@ -35,18 +33,21 @@ class App {
 
     this._onResize();
     this._onBack();
+
+    this._log(); //remove
   }
 
+  _log() {
+    //remove
+    console.log(this.heroTitle);
+    console.log(this.heroDescription);
+    console.log(this.heroButton);
+  }
   // general animations
 
   _runSplit() {
     const splitText = new SplitType("[text-split]", {
       types: "words",
-      tagName: "span",
-    });
-
-    const splitHeroTitle = new SplitType("[hero-title-animate]", {
-      types: "lines",
       tagName: "span",
     });
 
@@ -65,9 +66,7 @@ class App {
 
   _createMask() {
     document
-      .querySelectorAll(
-        "[text-split] span.word, [hero-title-animate] span.line "
-      )
+      .querySelectorAll("[text-split] span.word")
       .forEach(function (item) {
         let c = item.innerHTML;
         item.innerHTML =
@@ -114,6 +113,30 @@ class App {
     });
   }
 
+  _heroTextAnimate() {
+    window.addEventListener("load", () => {
+      gsap.fromTo(
+        [
+          this.heroTitle.querySelectorAll("span.word span"),
+          this.heroDescription
+            ? this.heroButton
+              ? (this.heroDescription.querySelectorAll("span.word span"),
+                this.heroButton)
+              : this.heroDescription.querySelectorAll("span.word span")
+            : this.heroButton,
+        ],
+        { yPercent: 100 },
+        {
+          yPercent: 0,
+          duration: 1.2,
+          delay: this.preloader.length == 1 ? 2.4 : 0.1,
+          ease: "power3.out",
+          stagger: { each: 0.032 },
+        }
+      );
+    });
+  }
+
   _dividersAnimate() {
     $("[divider-animation]").each(function () {
       let td = gsap.timeline({ paused: true });
@@ -141,27 +164,6 @@ class App {
           td.pause();
         },
       });
-    });
-  }
-
-  _heroTitleAnimate() {
-    window.addEventListener("load", () => {
-      gsap.fromTo(
-        [
-          this.heroTitleLines,
-          this.heroButtonWrapper.querySelector(".btn__link"),
-        ],
-        {
-          yPercent: 100,
-        },
-        {
-          yPercent: 0,
-          duration: 1.2,
-          delay: 2.4,
-          ease: "power3.out",
-          stagger: { amount: 0.2 },
-        }
-      );
     });
   }
 
@@ -328,8 +330,6 @@ class App {
     });
   }
 
-  // resize window-reload function
-
   _onResize() {
     let w = window.innerWidth;
     console.log("innerWidth= " + window.innerWidth);
@@ -361,17 +361,15 @@ class App {
   _onBack() {
     window.addEventListener("pageshow", function (event) {
       if (event.persisted) {
-        location.reload();
+        window.location.reload();
       }
     });
   }
-
-  // add on go back function that splits the text again
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  new App();
+  const app = new App();
 });
 
 console.log("gsap works");
-console.log("GitHub file Worked");
+console.log("Sandbox Worked");
