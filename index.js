@@ -342,7 +342,7 @@ class App {
         // splitText.revert();
         // runSplit();
         console.log("resize worked");
-        window.location.reload();
+        location.reload();
       }
     }
 
@@ -361,7 +361,7 @@ class App {
   _onBack() {
     window.addEventListener("pageshow", function (event) {
       if (event.persisted) {
-        window.location.reload();
+        location.reload();
       }
     });
   }
