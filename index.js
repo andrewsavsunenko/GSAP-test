@@ -372,4 +372,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 console.log("gsap works");
-console.log("Sandbox Worked");
+console.log("GitHub Worked");
