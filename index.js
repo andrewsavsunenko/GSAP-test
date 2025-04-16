@@ -337,7 +337,7 @@ class App {
 
     function reloadSplit() {
       console.log("reloadSplit() worked");
-      if (w !== window.innerWidth && this.isDesktop) {
+      if (w !== window.innerWidth && window.innerWidth > 991) {
         w = window.innerWidth;
         // splitText.revert();
         // runSplit();
