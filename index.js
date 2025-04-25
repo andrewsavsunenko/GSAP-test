@@ -84,7 +84,6 @@ class App {
       if (sessionStorage.getItem("preloaderRun" === null)) {
         this.preloaderTrigger.click();
         this.preloaderTrigger.click();
-      } else {
         sessionStorage.setItem("preloaderRun", "1");
       }
     });
