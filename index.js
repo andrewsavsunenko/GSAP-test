@@ -129,7 +129,7 @@ class App {
         {
           yPercent: 0,
           duration: 1.2,
-          delay: this.preloader.length == 1 ? 2.4 : 0.1,
+          delay: this.preloader.length == 1 ? 1.4 : 0.2,
           ease: "power3.out",
           stagger: { each: 0.032 },
         }
