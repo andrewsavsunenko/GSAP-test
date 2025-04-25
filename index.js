@@ -1,6 +1,5 @@
 class App {
   constructor() {
-    sessionStorage.setItem("");
     this.isDesktop = window.innerWidth > 991;
 
     this._runSplit();
@@ -10,7 +9,6 @@ class App {
 
     this.preloaderWrapper = document.querySelectorAll("[preloader]");
     this.preloaderTrigger = document.querySelector(".preloader__trigger");
-    this.preloaderTrigger2 = document.querySelector(".preloader__trigger2");
 
     this.heroTitle = document.querySelector("[hero-title-animate]");
     this.heroDescription = document.querySelector("[hero-description-animate]");
@@ -85,8 +83,6 @@ class App {
       if (sessionStorage.getItem("preloaderRun" === null)) {
         this.preloaderWrapper.style.display = "block";
         this.preloaderTrigger.click();
-        this.preloaderTrigger2.click();
-        this.preloaderWrapper.style.display = "none";
         sessionStorage.setItem("preloaderRun", "1");
       }
     });
