@@ -7,7 +7,7 @@ class App {
 
     this.animatedText = [...document.querySelectorAll("[text-animate]")];
 
-    this.preloaderWrapper = document.querySelectorAll("[preloader]");
+    this.preloaderWrapper = document.querySelector("[preloader]");
     this.preloaderTrigger = document.querySelector(".preloader__trigger");
 
     this.heroTitle = document.querySelector("[hero-title-animate]");
