@@ -129,10 +129,10 @@ class App {
         {
           yPercent: 0,
           duration: 1.2,
-          delay: 1.4,
+          delay: 1.8,
           //delay: this.preloader.length == 1 ? 1.4 : 0.4,
-          ease: "power3.out",
-          stagger: { each: 0.032 },
+          ease: "power2.out",
+          stagger: { each: 0.048 },
         }
       );
     });
