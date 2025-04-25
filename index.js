@@ -1,5 +1,6 @@
 class App {
   constructor() {
+    this._preloaderAnimation();
     this.isDesktop = window.innerWidth > 991;
 
     this._runSplit();
@@ -22,7 +23,6 @@ class App {
 
     this.visionNumbers = [...document.querySelectorAll("[visionNumber]")];
 
-    this._preloaderAnimation();
     this._textAnimate();
     this._heroTextAnimate();
     this._dividersAnimate();
@@ -143,7 +143,7 @@ class App {
         {
           yPercent: 0,
           duration: 1.2,
-          delay: sessionStorage.getItem("preloaderRun") ? 0.2 : 3.2,
+          delay: sessionStorage.getItem("preloaderRun") ? 0 : 3.2,
           ease: "power2.out",
           stagger: { each: 0.048 },
         }
