@@ -313,7 +313,7 @@ class App {
             ? "top 34%" //for 1st item
             : i === 5
             ? "top 54%" // for 5th item
-            : "top 68%" // for the rest
+            : "top 72%" // for the rest
           : "top 82%", // on mobile
         onEnter: () => {
           tm.play();
