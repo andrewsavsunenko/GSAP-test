@@ -81,7 +81,7 @@ class App {
   _preloaderAnimation() {
     window.addEventListener("load", () => {
       if (sessionStorage.getItem("preloaderRun") == null) {
-        //this.preloaderWrapper.style.display = "block";
+        this.preloaderWrapper.style.display = "block";
         this.preloaderTrigger.click();
         sessionStorage.setItem("preloaderRun", "1");
       }
