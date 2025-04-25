@@ -80,10 +80,12 @@ class App {
 
   _preloaderAnimation() {
     window.addEventListener("load", () => {
+      console.log("preloader animation");
       if (sessionStorage.getItem("preloaderRun") == null) {
         this.preloaderWrapper.style.display = "block";
         this.preloaderTrigger.click();
         sessionStorage.setItem("preloaderRun", "1");
+        console.log("preloaderRun Set");
       }
     });
   }
