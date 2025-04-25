@@ -143,7 +143,7 @@ class App {
         {
           yPercent: 0,
           duration: 1.2,
-          delay: sessionStorage.getItem("preloaderRun") ? 0.2 : 1.4,
+          delay: sessionStorage.getItem("preloaderRun") ? 0.2 : 3.2,
           ease: "power2.out",
           stagger: { each: 0.048 },
         }
