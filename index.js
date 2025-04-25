@@ -310,10 +310,10 @@ class App {
         trigger: item,
         start: this.isDesktop
           ? i === 1
-            ? "top 34%"
+            ? "top 34%" //for 1st item
             : i === 5
-            ? "top 54%"
-            : "top 62%"
+            ? "top 54%" // for 5th item
+            : "top 58%" // for the rest
           : "top 82%", // on mobile
         onEnter: () => {
           tm.play();
