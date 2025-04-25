@@ -10,6 +10,7 @@ class App {
 
     this.preloader = document.querySelectorAll("[preloader]");
     this.preloaderTrigger = document.querySelector(".preloader__trigger");
+    this.preloaderTrigger2 = document.querySelector(".preloader__trigger2");
 
     this.heroTitle = document.querySelector("[hero-title-animate]");
     this.heroDescription = document.querySelector("[hero-description-animate]");
@@ -83,7 +84,7 @@ class App {
     window.addEventListener("load", () => {
       if (sessionStorage.getItem("preloaderRun" === null)) {
         this.preloaderTrigger.click();
-        this.preloaderTrigger.click();
+        this.preloaderTrigger2.click();
         sessionStorage.setItem("preloaderRun", "1");
       }
     });
