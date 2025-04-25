@@ -8,7 +8,7 @@ class App {
 
     this.animatedText = [...document.querySelectorAll("[text-animate]")];
 
-    this.preloader = document.querySelectorAll("[preloader]");
+    this.preloaderWrapper = document.querySelectorAll("[preloader]");
     this.preloaderTrigger = document.querySelector(".preloader__trigger");
     this.preloaderTrigger2 = document.querySelector(".preloader__trigger2");
 
@@ -83,8 +83,10 @@ class App {
   _preloaderAnimation() {
     window.addEventListener("load", () => {
       if (sessionStorage.getItem("preloaderRun" === null)) {
+        this.preloaderWrapper.style.display = "block";
         this.preloaderTrigger.click();
         this.preloaderTrigger2.click();
+        this.preloaderWrapper.style.display = "none";
         sessionStorage.setItem("preloaderRun", "1");
       }
     });
