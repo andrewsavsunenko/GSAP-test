@@ -1,5 +1,6 @@
 class App {
   constructor() {
+    sessionStorage.setItem("");
     this.isDesktop = window.innerWidth > 991;
 
     this._runSplit();
@@ -8,6 +9,7 @@ class App {
     this.animatedText = [...document.querySelectorAll("[text-animate]")];
 
     this.preloader = document.querySelectorAll("[preloader]");
+    this.preloaderTrigger = document.querySelector(".preloader__trigger");
 
     this.heroTitle = document.querySelector("[hero-title-animate]");
     this.heroDescription = document.querySelector("[hero-description-animate]");
@@ -21,6 +23,7 @@ class App {
 
     this.visionNumbers = [...document.querySelectorAll("[visionNumber]")];
 
+    this._preloaderAnimation();
     this._textAnimate();
     this._heroTextAnimate();
     this._dividersAnimate();
@@ -76,6 +79,17 @@ class App {
       });
   }
 
+  _preloaderAnimation() {
+    window.addEventListener("load", () => {
+      if (sessionStorage.getItem("preloaderRun" === null)) {
+        this.preloaderTrigger.click();
+        this.preloaderTrigger.click();
+      } else {
+        sessionStorage.setItem("preloaderRun", "1");
+      }
+    });
+  }
+
   _textAnimate() {
     this.animatedText.forEach((textNode) => {
       let tm = gsap.timeline({ paused: true });
@@ -129,8 +143,7 @@ class App {
         {
           yPercent: 0,
           duration: 1.2,
-          delay: 1.6,
-          //delay: this.preloader.length == 1 ? 1.4 : 0.4,
+          delay: sessionStorage.getItem("preloaderRun") ? 0.2 : 1.4,
           ease: "power2.out",
           stagger: { each: 0.048 },
         }
