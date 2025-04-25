@@ -264,7 +264,7 @@ class App {
         {
           yPercent: -140,
           duration: 1.2,
-          ease: "power2.out",
+          ease: "power3.out",
           stagger: { each: 0.12 },
         }
       );
@@ -301,7 +301,7 @@ class App {
         {
           yPercent: this.isDesktop ? 0 : -100,
           duration: 1.2,
-          ease: "power3.out",
+          ease: "power2.out",
           stagger: { each: 0.12 },
         }
       );
